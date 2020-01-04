@@ -6,7 +6,7 @@
           <template slot="title">
             <i class="el-icon-tickets"></i> 内容管理
           </template>
-          <el-menu-item index="/articles/index">文章列表</el-menu-item>
+          <el-menu-item index="/articles/list">文章列表</el-menu-item>
           <el-menu-item index="/articles/create">新建文章</el-menu-item>
         </el-submenu>
       </el-menu>
@@ -22,7 +22,7 @@
             <el-dropdown-item>删除</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <span>王小虎</span>
+        <span>木子</span>
       </el-header>
 
       <el-main>

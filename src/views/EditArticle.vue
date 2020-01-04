@@ -8,7 +8,7 @@
     </el-form-item>
     <el-form-item>
       <el-button type="primary" native-type="submit">保存</el-button>
-      <el-button>取消</el-button>
+      <el-button @click="cancelCreat">取消</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -21,6 +21,7 @@ export default {
     };
   },
   methods: {
+    // 修改文章,将文章id和新修改的数据传递给后端,让后端进行查询并且修改数据
     saveArticle() {
       this.$http.put(`articles/${this.$route.params.id}`, this.article).then(res => {
         this.$message({
@@ -28,17 +29,16 @@ export default {
           type: "success"
         });
         console.log(res.data)
-      });
-      setTimeout(()=>{
         this.$router.push("/articles/list");
-      },100)
-      
-      
+      });
     },
     fetch(){
       this.$http.get(`/articles/${this.$route.params.id}`).then(res=>{
         this.article=res.data
       })
+    },
+    cancelCreat(){
+      this.$router.push("/articles/list")
     }
   },
   created() {

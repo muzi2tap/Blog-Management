@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: "/articles/index",
+    redirect: "/articles/list",
     component: ListArticle
   },
   {
